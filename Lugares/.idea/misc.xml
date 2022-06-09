@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
         <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_principal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/app_bar_principal.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_add_lugar.xml" value="0.33" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_lugar.xml" value="0.18" />
         <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/drawable/ic_logoff.xml" value="0.151" />
         <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/layout/content_principal.xml" value="0.24427083333333333" />
