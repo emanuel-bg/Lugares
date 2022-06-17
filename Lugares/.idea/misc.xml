@@ -3,17 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
-        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_principal.xml" value="0.36666666666666664" />
-        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/app_bar_principal.xml" value="0.1" />
-        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_add_lugar.xml" value="0.33" />
-        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_lugar.xml" value="0.18" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/drawable/ic_logoff.xml" value="0.151" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/layout/content_principal.xml" value="0.24427083333333333" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/layout/nav_header_principal.xml" value="0.24427083333333333" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/menu/activity_main_drawer.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/venor/OneDrive/Documentos/movil/Lugares/app/src/main/res/menu/principal.xml" value="0.29907407407407405" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/drawable/ic_delete.xml" value="0.105" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/drawable/ic_location.xml" value="0.3525" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/layout/fragment_add_lugar.xml" value="0.25" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/layout/fragment_lugar.xml" value="0.33" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/layout/fragment_update_lugar.xml" value="0.26521739130434785" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/layout/lugar_fila.xml" value="0.33" />
+        <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/menu/delete_menu.xml" value="0.22" />
       </map>
     </option>
   </component>
