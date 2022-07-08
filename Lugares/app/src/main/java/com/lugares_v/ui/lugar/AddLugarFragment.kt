@@ -16,7 +16,6 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.lugares_v.R
 import com.lugares_v.databinding.FragmentAddLugarBinding
-import com.lugares_v.databinding.FragmentLugarBinding
 import com.lugares_v.model.Lugar
 import com.lugares_v.viewmodel.LugarViewModel
 
@@ -77,8 +76,8 @@ class AddLugarFragment : Fragment() {
         val longitud=binding.tvLongitud.text.toString().toDouble()
         val altura=binding.tvAltura.text.toString().toDouble()
         if (nombre.isNotEmpty()) { //Si puedo crear un lugar
-            val lugar= Lugar(0,nombre,correo,telefono,web,latitud, longitud,altura,"","")
-            lugarViewModel.addLugar(lugar)
+            val lugar= Lugar("",nombre,correo,telefono,web,latitud, longitud,altura,"","")
+            lugarViewModel.saveLugar(lugar)
             Toast.makeText(requireContext(),getString(R.string.msg_lugar_added),Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addLugarFragment_to_nav_lugar)
         } else {  //Mensaje de error...
