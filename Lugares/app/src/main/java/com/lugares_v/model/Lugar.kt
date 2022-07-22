@@ -3,11 +3,11 @@ package com.lugares_v.model
 import android.os.Parcelable
 
 import kotlinx.parcelize.Parcelize
+import java.time.LocalDate
 
 @Parcelize
 
 data class Lugar(
-
     var id: String,
     val nombre: String,
     val correo: String?,

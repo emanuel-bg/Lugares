@@ -3,6 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable-v24/ic_mic.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_delete.xml" value="0.188" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_email.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_launcher_background.xml" value="0.188" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_location.xml" value="0.188" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_login.xml" value="0.188" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/drawable/ic_logoff.xml" value="0.188" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/activity_principal.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/app_bar_principal.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/content_principal.xml" value="0.3333333333333333" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_add_lugar.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_gallery.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_lugar.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_slideshow.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/fragment_update_lugar.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/lugar_fila.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/layout/nav_header_principal.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/menu/activity_main_drawer.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/menu/delete_menu.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/menu/principal.xml" value="0.1796875" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Repositorios/Lugares/Lugares/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/drawable/ic_delete.xml" value="0.105" />
         <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/drawable/ic_location.xml" value="0.3525" />
         <entry key="..\:/Repositorios/Lugares_v2/app/src/main/res/layout/fragment_add_lugar.xml" value="0.25" />

@@ -43,7 +43,7 @@ binding.tvAltura.text=args.lugar.altura.toString()
         binding.tvLongitud.text=args.lugar.longitud.toString()
 
 
-        binding.btActualizar.setOnClickListener {updateLugar() }
+        binding.btUpdateLugar.setOnClickListener {updateLugar() }
         binding.btEmail.setOnClickListener{escribirCorreo()}
         binding.btPhone.setOnClickListener{realizarLlamada()}
         binding.btWeb.setOnClickListener{verWeb()}
