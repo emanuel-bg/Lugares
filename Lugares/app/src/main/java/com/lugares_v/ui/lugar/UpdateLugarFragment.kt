@@ -3,6 +3,7 @@ package com.lugares_v.ui.lugar
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -11,6 +12,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.lugares_v.R
 import com.lugares_v.databinding.FragmentUpdateLugarBinding
 import com.lugares_v.databinding.FragmentLugarBinding
@@ -26,6 +28,9 @@ class UpdateLugarFragment : Fragment() {
     private var _binding: FragmentUpdateLugarBinding? = null
     private val binding get() = _binding!!
     private lateinit var lugarViewModel: LugarViewModel
+    //Objeto para escuchar
+    private lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,6 +47,30 @@ binding.tvAltura.text=args.lugar.altura.toString()
         binding.tvLatitud.text=args.lugar.latitud.toString()
         binding.tvLongitud.text=args.lugar.longitud.toString()
 
+if(args.lugar.rutaAudio?.isNotEmpty()==true){
+    //Hay una ruta de un audio.
+    mediaPlayer= MediaPlayer()
+    mediaPlayer.setDataSource(args.lugar.rutaAudio)
+    mediaPlayer.prepare()
+    binding.btPlay.isEnabled=true
+}else{
+    //No hay ruta de audio
+    binding.btPlay.isEnabled=false
+
+
+}
+binding.btPlay.setOnClickListener{ mediaPlayer.start()}
+
+        if(args.lugar.rutaImagen?.isNotEmpty()==true){
+            //Hay una ruta de un audio.
+            mediaPlayer= MediaPlayer()
+            mediaPlayer.setDataSource(args.lugar.rutaAudio)
+            mediaPlayer.prepare()
+            binding.btPlay.isEnabled=true
+        }
+        Glide.with(requireContext()).
+        load(args.lugar.rutaImagen).fitCenter()
+            .into(binding.imagen)
 
         binding.btUpdateLugar.setOnClickListener {updateLugar() }
         binding.btEmail.setOnClickListener{escribirCorreo()}

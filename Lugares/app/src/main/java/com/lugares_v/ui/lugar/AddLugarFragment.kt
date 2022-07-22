@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -48,7 +50,10 @@ class AddLugarFragment : Fragment() {
             ViewModelProvider(this)[LugarViewModel::class.java]
         _binding = FragmentAddLugarBinding.inflate(inflater, container, false)
         binding.btAgregar.setOnClickListener {
-            addLugar()
+            binding.progressBar.visibility=ProgressBar.VISIBLE
+            binding.msgMensaje.text=getString(R.string.msg_subiendo_audio)
+            binding.msgMensaje.visibility=TextView.VISIBLE
+            subeAudio()
         }
         ubicaGPS()
 
@@ -82,7 +87,7 @@ imagenUtiles= ImagenUtiles(
     private fun subeAudio(){
 
         val audioFile=audioUtiles.audioFile
-        if (audioFile.exists()
+        if (audioFile!=null && audioFile.exists()
             && audioFile.isFile &&
             audioFile.canRead()) {
             var usuario = Firebase.auth.currentUser?.email
@@ -90,9 +95,10 @@ imagenUtiles= ImagenUtiles(
             val rutaLocal= Uri.fromFile(audioFile)
             val referencia:StorageReference=Firebase.storage.reference.child(rutaNube)
             referencia.putFile(rutaLocal).addOnSuccessListener {
-                referencia.downloadUrl
-                val rutaAudio=it.toString()
-                subeImagen(rutaAudio)
+                referencia.downloadUrl.addOnSuccessListener {
+                    val rutaAudio = it.toString()
+                    subeImagen(rutaAudio)
+                }
             }.addOnFailureListener{
                 subeImagen("")
             }
@@ -100,27 +106,36 @@ imagenUtiles= ImagenUtiles(
             subeImagen("")
         }
     }
-    private fun subeImagen(rutaAudio:String){
-binding.msgMensaje.text=getString(R.string.msg_subiendo_imagen)
-        val imagenFile=imagenUtiles.imagenFile
-        if (imagenFile.exists()
-            && imagenFile.isFile &&
-            imagenFile.canRead()) {
-            var usuario = Firebase.auth.currentUser?.email
-            val rutaNube="lugaresApp/${usuario}/imagenes/${imagenFile.name}"
-            val rutaLocal= Uri.fromFile(imagenFile)
-            val referencia:StorageReference=Firebase.storage.reference.child(rutaNube)
-            referencia.putFile(rutaLocal).addOnSuccessListener {
-                referencia.downloadUrl
-                val rutaImagen=it.toString()
-                addLugar(rutaAudio,rutaImagen)
-            }.addOnFailureListener{
-                addLugar(rutaAudio,"")
+    private fun subeImagen(rutaAudio:String) {
+        if (imagenUtiles.getFotoTomada()) {
+            binding.msgMensaje.text = getString(R.string.msg_subiendo_imagen)
+            val imagenFile = imagenUtiles.imagenFile
+            if (imagenFile != null && imagenFile.exists()
+                && imagenFile.isFile &&
+                imagenFile.canRead()
+            ) {
+                var usuario = Firebase.auth.currentUser?.email
+                val rutaNube = "lugaresApp/${usuario}/imagenes/${imagenFile.name}"
+                val rutaLocal = Uri.fromFile(imagenFile)
+                val referencia: StorageReference = Firebase.storage.reference.child(rutaNube)
+                referencia.putFile(rutaLocal).addOnSuccessListener {
+                    referencia.downloadUrl.addOnSuccessListener {
+                        val rutaImagen = it.toString()
+                        addLugar(rutaAudio, rutaImagen)
+                    }
+                }.addOnFailureListener {
+                    addLugar(rutaAudio, "")
+                }
+            }
+
+         else {
+                addLugar(rutaAudio, "")
             }
         }else{
-            addLugar(rutaAudio,"")
+            addLugar(rutaAudio, "")
         }
     }
+
     private fun ubicaGPS() {
         val ubicacion: FusedLocationProviderClient=
             LocationServices.getFusedLocationProviderClient(requireContext())
@@ -150,7 +165,7 @@ binding.msgMensaje.text=getString(R.string.msg_subiendo_imagen)
     }
 
 
-    private fun addLugar() {
+    private fun addLugar(rutaAudio: String,rutaImagen: String) {
         val nombre=binding.etNombre.text.toString()
         val correo=binding.etCorreo.text.toString()
         val telefono=binding.etTelefono.text.toString()
@@ -159,7 +174,7 @@ binding.msgMensaje.text=getString(R.string.msg_subiendo_imagen)
         val longitud=binding.tvLongitud.text.toString().toDouble()
         val altura=binding.tvAltura.text.toString().toDouble()
         if (nombre.isNotEmpty()) { //Si puedo crear un lugar
-            val lugar= Lugar("",nombre,correo,telefono,web,latitud, longitud,altura,"","")
+            val lugar= Lugar("",nombre,correo,telefono,web,latitud, longitud,altura,rutaAudio,rutaImagen)
             lugarViewModel.saveLugar(lugar)
             Toast.makeText(requireContext(),getString(R.string.msg_lugar_added),Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addLugarFragment_to_nav_lugar)

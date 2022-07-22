@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">Lugares</string>
-    <string name="default_web_client_idg" translatable="false">825873755655-9rn5fqkv46shj4vmqstbuhbfckh53sqi.apps.googleusercontent.com</string>
-    <string name="tv_correo">Correo</string>
-    <string name="tv_clave">Contraseña</string>
-    <string name="msg_fallo_registro">Falló la creación del usuario</string>
+    <string name="tv_correo">Email</string>
+    <string name="tv_clave">Password</string>
+    <string name="msg_fallo_registro">Error creating user</string>
     <string name="msg_fallo_login">Falló la autenticación del usuario</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -19,14 +18,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="msg_nombre">Nombre del lugar</string>
-    <string name="msg_correo">Corre (elcorreo@xxxx.xxx)</string>
-    <string name="msg_telefono">Teléfono (9999–9999)</string>
-    <string name="msg_web">Sitio Web</string>
-    <string name="bt_addLugar">Agregar Lugar</string>
-    <string name="bt_updateLugar">Actualizar Lugar</string>
-    <string name="msg_lugar_added">Lugar agregado</string>
-    <string name="msg_data">Faltan datos!!</string>
+    <string name="msg_nombre">Nanme</string>
+    <string name="msg_correo">Email (elcorreo@xxxx.xxx)</string>
+    <string name="msg_telefono">Phone (9999–9999)</string>
+    <string name="msg_web">Web Side</string>
+    <string name="bt_addLugar">Add</string>
+    <string name="bt_updateLugar">Update</string>
+    <string name="msg_lugar_added">Added</string>
+    <string name="msg_data">Data Empty!!</string>
     <string name="msg_lugar_update">Lugar Actualizado</string>
     <string name="delete">Eliminar Lugar</string>
     <string name="seguroBorrar">¿Está seguro de que quiere borrar el lugar </string>

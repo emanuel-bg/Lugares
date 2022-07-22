@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.lugares_v.databinding.LugarFilaBinding
 import com.lugares_v.model.Lugar
 import com.lugares_v.ui.lugar.LugarFragmentDirections
@@ -21,6 +22,12 @@ class LugarAdapter:RecyclerView.Adapter<LugarAdapter.LugarViewHolder>() {
                 itemBinding.tvCorreo.text=lugar.correo
                 itemBinding.tvTelefono.text=lugar.telefono
                 itemBinding.tvWeb.text=lugar.web
+                //Mostrar Imagen
+                Glide.with(itemBinding.root.context).
+                load(lugar.rutaImagen).circleCrop()
+                    .into(itemBinding.imagen)
+
+                //click para modificar el lugar
                 itemBinding.vistaFila.setOnClickListener{
                     val accion=LugarFragmentDirections
                         .actionNavLugarToUpdateLugarFragment(lugar)

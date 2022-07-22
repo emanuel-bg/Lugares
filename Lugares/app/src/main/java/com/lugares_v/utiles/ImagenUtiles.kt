@@ -22,12 +22,16 @@ class ImagenUtiles (
     private var tomarFotoActivity: ActivityResultLauncher<Intent>
 ) {
     init {
+        imagenFile.createNewFile()
         btPhoto.setOnClickListener { tomarFoto() }
         btRotaL.setOnClickListener { imagen.rotation=imagen.rotation-90f }
         btRotaR.setOnClickListener { imagen.rotation=imagen.rotation+90f }
     }
-
-    lateinit var imagenFile: File
+    private var fotoTomada:Boolean=false
+fun getFotoTomada():Boolean{
+    return fotoTomada
+}
+     lateinit var imagenFile: File
     private lateinit var currentPhotoPath: String
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -59,7 +63,9 @@ class ImagenUtiles (
     fun actualizaFoto() {
         imagen.setImageBitmap(
             BitmapFactory.decodeFile(imagenFile.absolutePath))
+        fotoTomada=true
     }
+
 }
 
 
