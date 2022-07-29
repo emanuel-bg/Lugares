@@ -1,4 +1,4 @@
-package com.lugares.utiles
+package com.lugares_v.utiles
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.content.FileProvider
+import com.lugares.utiles.OtrosUtiles
 import com.lugares_v.BuildConfig
 import java.io.File
 
@@ -22,16 +23,17 @@ class ImagenUtiles (
     private var tomarFotoActivity: ActivityResultLauncher<Intent>
 ) {
     init {
-        imagenFile.createNewFile()
         btPhoto.setOnClickListener { tomarFoto() }
         btRotaL.setOnClickListener { imagen.rotation=imagen.rotation-90f }
         btRotaR.setOnClickListener { imagen.rotation=imagen.rotation+90f }
     }
-    private var fotoTomada:Boolean=false
-fun getFotoTomada():Boolean{
-    return fotoTomada
-}
-     lateinit var imagenFile: File
+
+    private var fotoTomada:Boolean = false
+    fun getFotoTomada(): Boolean {
+        return fotoTomada
+    }
+
+    lateinit var imagenFile: File
     private lateinit var currentPhotoPath: String
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -49,7 +51,7 @@ fun getFotoTomada():Boolean{
     }
 
     private fun createImageFile(): File {
-        val archivo=OtrosUtiles.getTempFile("imagen_")
+        val archivo= OtrosUtiles.getTempFile("imagen_")
         val storageDir: File? =
             contexto.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val image= File.createTempFile(
@@ -60,16 +62,13 @@ fun getFotoTomada():Boolean{
         return image
     }
 
+    //Se pone la foto en el App
     fun actualizaFoto() {
         imagen.setImageBitmap(
             BitmapFactory.decodeFile(imagenFile.absolutePath))
         fotoTomada=true
     }
-
 }
-
-
-
 
 
 

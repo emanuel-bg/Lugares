@@ -26,10 +26,10 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.lugares.utiles.AudioUtiles
-import com.lugares.utiles.ImagenUtiles
 import com.lugares_v.R
 import com.lugares_v.databinding.FragmentAddLugarBinding
 import com.lugares_v.model.Lugar
+import com.lugares_v.utiles.ImagenUtiles
 import com.lugares_v.viewmodel.LugarViewModel
 
 class AddLugarFragment : Fragment() {
